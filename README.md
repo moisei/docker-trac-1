@@ -16,7 +16,7 @@ docker exec -ti trac trac-admin /trac initenv
 We might some day make this image slimmer, remove wiki and VCS stuff for example.
 
 ```
-docker run -p 80:80 -v $(PWD)/trac-env-1:/trac -d --name trac solsson/trac:ticket-engine
+docker run -p 80:80 -v $(PWD)/trac-env-1:/trac -d --name trac solsson/trac:engine
 # If you didn't enable rpc in your env already
 docker exec -ti trac trac-admin /trac config set components tracrpc.* enabled
 # You may want "authenticated" here instead of "anonymous"
