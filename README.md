@@ -22,5 +22,16 @@ docker exec -ti trac trac-admin /trac config set components tracrpc.* enabled
 # You may want "authenticated" here instead of "anonymous"
 docker exec -ti trac trac-admin /trac permission add anonymous XML_RPC
 # ok?
-curl -s http://$(docker-machine ip default)/login/rpc -H "Accept: text/html" | grep "Installed API version"
+curl -s http://$(docker-machine ip default)/jsonrpc -H "Accept: text/html" | grep "Installed API version"
+```
+
+## Development version
+
+```
+docker build -t solsson/trac:1.2-base 1.2-base/
+docker build -t solsson/trac:1.2-single single-1.2/
+docker build -t solsson/trac:1.2-engine engine-1.2/
+docker run -p 80:80 -v $(PWD)/trac-env-2:/trac -d --name trac solsson/trac:1.2-engine
+# let everyone do everything
+docker exec -ti trac trac-admin /trac permission add anonymous TICKET_ADMIN
 ```
