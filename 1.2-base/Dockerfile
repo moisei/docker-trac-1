@@ -1,6 +1,6 @@
 FROM python:2
 
-ENV trac_version=trunk
+ENV trac_version=1.2rc1
 
 # https://trac.edgewall.org/browser/trunk/INSTALL.rst
 RUN easy_install \
@@ -8,7 +8,8 @@ RUN easy_install \
   pytz \
   Babel \
   docutils \
-  Pygments
+  Pygments \
+  MySQL-python==1.2.5
 
 RUN cd /usr/src && \
   curl -sL https://github.com/edgewall/trac/archive/$trac_version.tar.gz | tar xvz && \

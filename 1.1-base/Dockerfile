@@ -8,7 +8,8 @@ RUN easy_install \
   pytz \
   Babel \
   docutils \
-  Pygments
+  Pygments \
+  MySQL-python==1.2.5
 
 RUN cd /usr/src && \
   curl -sL http://download.edgewall.org/trac/Trac-$trac_version.tar.gz | tar xvz && \
