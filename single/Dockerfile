@@ -9,4 +9,5 @@ RUN easy_install Trac==$trac_version MySQL-python==1.2.5
 
 EXPOSE 80
 
-ENTRYPOINT ["tracd", "-s", "/trac"]
+ENTRYPOINT ["tracd"]
+CMD ["-s", "/trac"]

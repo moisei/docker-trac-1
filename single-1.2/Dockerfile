@@ -5,4 +5,5 @@ FROM solsson/trac:1.2-base
 
 EXPOSE 80
 
-ENTRYPOINT ["tracd", "-s", "/trac"]
+ENTRYPOINT ["tracd"]
+CMD ["-s", "/trac"]
