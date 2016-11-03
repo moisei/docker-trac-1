@@ -1,6 +1,6 @@
 FROM python:2
 
-ENV trac_version=trunk
+ENV trac_version=1.2rc1
 
 # https://trac.edgewall.org/browser/trunk/INSTALL.rst
 RUN easy_install \
